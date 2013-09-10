@@ -1,4 +1,6 @@
-use lib qw/lib/;
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+
 use Device::LSM303DLHC::Compass;
 use Device::LSM303DLHC::Accelerometer;
 

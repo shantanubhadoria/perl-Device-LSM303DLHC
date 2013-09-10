@@ -9,6 +9,13 @@ use 5.010;
 use Moose;
 use POSIX;
 
+extends 'Device::SMBus';
+
+has '+I2CDeviceAddress' => (
+    is      => 'ro',
+    default => 0x19,
+);
+
 # Registers for the Accelerometer 
 use constant {
     CTRL_REG1_A => 0x20,
@@ -28,32 +35,6 @@ use constant {
 };
 
 use integer; # Use arithmetic right shift instead of unsigned binary right shift with >> 4
-
-extends 'Device::SMBus';
-
-has '+I2CDeviceAddress' => (
-    is      => 'ro',
-    default => 0x19,
-);
-
-has magnetometerMaxVector => (
-    is      => 'rw',
-    default => (
-        x => 0,
-        y => 0,
-        z => 0,
-    ),
-);
-
-has magnetometerMinVector => (
-    is      => 'rw',
-    default => (
-        x => 0,
-        y => 0,
-        z => 0,
-    ),
-);
-
 
 =method enable 
 

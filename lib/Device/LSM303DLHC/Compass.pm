@@ -33,6 +33,27 @@ use constant {
     OUT_Z_L_M => 0x06,
 };
 
+has magnetometerMaxVector => (
+    is      => 'rw',
+    default => sub {
+        return (
+            x => 0,
+            y => 0,
+            z => 0,);
+    },
+);
+
+has magnetometerMinVector => (
+    is      => 'rw',
+    default => sub {
+        return (
+            x => 0,
+            y => 0,
+            z => 0,);
+    },
+);
+
+
 =method enable 
 
     $self->enable()
