@@ -13,9 +13,26 @@ use POSIX;
 use Device::LSM303DLHC::Compass;
 use Device::LSM303DLHC::Accelerometer;
 
+=attr I2CBusDevicePath
+
+this is the device file path for your I2CBus that the LSM303DLHC is connected on e.g. /dev/i2c-1
+This must be provided during object creation.
+
+=cut
+
 has 'I2CBusDevicePath' => (
-    is => 'ro',
+    is       => 'ro',
+    required => 1,
 );
+
+=attr Compass
+
+    $self->Compass->enable();
+    $self->Compass->getReading();
+
+This is a object of [[Device::LSM303DLHC::Compass]]
+
+=cut
 
 has Compass => (
     is => 'ro',
@@ -30,6 +47,15 @@ sub _build_Compass {
     );
     return $obj;
 }
+
+=attr Accelerometer 
+
+    $self->Accelerometer->enable();
+    $self->Accelerometer->getReading();
+
+This is a object of [[Device::LSM303DLHC::Accelerometer]]
+
+=cut
 
 has Accelerometer => (
     is => 'ro',
