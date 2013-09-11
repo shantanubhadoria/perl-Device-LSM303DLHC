@@ -30,7 +30,7 @@ has 'I2CBusDevicePath' => (
     $self->Compass->enable();
     $self->Compass->getReading();
 
-This is a object of [[Device::LSM303DLHC::Compass]]
+This is a object of L<Device::LSM303DLHC::Compass>
 
 =cut
 
@@ -53,7 +53,7 @@ sub _build_Compass {
     $self->Accelerometer->enable();
     $self->Accelerometer->getReading();
 
-This is a object of [[Device::LSM303DLHC::Accelerometer]]
+This is a object of L<Device::LSM303DLHC::Accelerometer>
 
 =cut
 
