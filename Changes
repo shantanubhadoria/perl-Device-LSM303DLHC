@@ -1,5 +1,8 @@
 Changelog for Device-LSM303DLHC
 
+0.005 2013-09-12T09:23:37
+ - Added README.pod and Changes [Shantanu]
+
 0.004 2013-09-12T06:47:10
  - v0.004
    
