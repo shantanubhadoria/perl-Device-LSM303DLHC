@@ -50,5 +50,7 @@ while(){
 =cut
 
     
+    print 'COMPASS: ' . Dumper {$dev->Compass->getRawReading()};
+    print 'ACCELEROMETER: ' . Dumper {$dev->Accelerometer->getRawReading()};
 }
 

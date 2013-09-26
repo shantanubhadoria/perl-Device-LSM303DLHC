@@ -1,5 +1,26 @@
-Revision history for Perl extension Device::LSM303DLHC.
+Changelog for Device-LSM303DLHC
 
-0.01  Sat Sep  7 13:18:47 2013
-	- original version;  
+0.005 2013-09-12T09:23:37
+ - Added README.pod and Changes [Shantanu]
+
+0.004 2013-09-12T06:47:10
+ - v0.004
+   
+    - Moved to ChangelogFromGit compliance with CPAN::Changes::Spec
+   [Shantanu] [Shantanu]
+ - Moved to ChangelogFromGit compliance with CPAN::Changes::Spec [Shantanu]
+
+0.003 2013-09-12T06:11:56
+ - Moved to ChangelogFromGit compliance with CPAN::Changes::Spec [Shantanu]
+
+0.002 2013-09-11T09:15:31
+ - pod fix [Shantanu]
+
+0.001 2013-09-11T07:46:23
+ -  final mods to the pod` [Shantanu]
+ - Fixed bugs in core module [Shantanu]
+ -  minor commit [Shantanu Bhadoria]
+ - First Commit [Shantanu Bhadoria]
+ - First Push with basic Raw Readings from LSM303DLHC Compass and
+   Accelerometer [Shantanu Bhadoria]
 
