@@ -5,11 +5,18 @@ package Device::LSM303DLHC::Compass;
 # COPYRIGHT
 # VERSION
 
+# Dependencies
 use 5.010;
 use Moose;
 use POSIX;
 
 extends 'Device::SMBus';
+
+=attr I2CDeviceAddress
+
+Containd the I2CDevice Address for the bus on which your Compass is connected. It would look like 0x6b. Default is 0x1e.
+
+=cut
 
 has '+I2CDeviceAddress' => (
     is      => 'ro',
@@ -79,11 +86,11 @@ Return raw readings from accelerometer registers
 sub getRawReading {
     my ($self) = @_;
 
-    return (
+    return {
         x => $self->_typecast_int_to_int16( ($self->readByteData(OUT_X_H_M) << 8) | $self->readByteData(OUT_X_L_M) ),
         y => $self->_typecast_int_to_int16( ($self->readByteData(OUT_Y_H_M) << 8) | $self->readByteData(OUT_Y_L_M) ),
         z => $self->_typecast_int_to_int16( ($self->readByteData(OUT_Z_H_M) << 8) | $self->readByteData(OUT_Z_L_M) ),
-    );
+    };
 }
 
 =method getReading

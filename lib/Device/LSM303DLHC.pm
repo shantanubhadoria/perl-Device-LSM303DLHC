@@ -5,11 +5,11 @@ package Device::LSM303DLHC;
 # COPYRIGHT
 # VERSION
 
+# Dependencies
 use 5.010;
 use Moose;
-use POSIX
+use POSIX;
 
-# Dependencies
 use Device::LSM303DLHC::Compass;
 use Device::LSM303DLHC::Accelerometer;
 
@@ -26,7 +26,7 @@ has Compass => (
 sub _build_Compass {
     my ($self) = @_;
     my $obj = Device::LSM303DLHC::Compass->new(
-        I2CBusDevicePath => $self->I2CBusDevicePath;
+        I2CBusDevicePath => $self->I2CBusDevicePath
     );
     return $obj;
 }
@@ -40,7 +40,7 @@ has Accelerometer => (
 sub _build_Accelerometer {
     my ($self) = @_;
     my $obj = Device::LSM303DLHC::Accelerometer->new(
-        I2CBusDevicePath => $self->I2CBusDevicePath;
+        I2CBusDevicePath => $self->I2CBusDevicePath
     );
     return $obj;
 }
