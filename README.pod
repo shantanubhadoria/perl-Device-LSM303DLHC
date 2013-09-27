@@ -6,7 +6,7 @@ Device::LSM303DLHC - I2C interface to LSM303DLHC 3 axis magnetometer(compass) an
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 ATTRIBUTES
 
@@ -15,12 +15,12 @@ version 0.006
 this is the device file path for your I2CBus that the LSM303DLHC is connected on e.g. /dev/i2c-1
 This must be provided during object creation.
 
-=head2 Compass
+=head2 Magnetometer
 
-    $self->Compass->enable();
-    $self->Compass->getReading();
+    $self->Magnetometer->enable();
+    $self->Magnetometer->getReading();
 
-This is a object of L<Device::Compass::LSM303DLHC>
+This is a object of L<Device::Magnetometer::LSM303DLHC>
 
 =head2 Accelerometer 
 

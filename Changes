@@ -1,6 +1,20 @@
 Changelog for Device-LSM303DLHC
 
-0.006 2013-09-27T10:49:13
+0.007 2013-09-27T11:40:14
+ - Renamed Compass to Magnetometer to use the more scientific term since
+   the term compass is usually used for 2D magnetometers not 3D
+   Magnetometers. [Shantanu]
+
+0.006 2013-09-27T10:50:09
+ - v0.006
+   
+    - Removed Math::Trig usage. manually computing trig functions
+   [Shantanu]
+    - Resolved xt test failures [Shantanu]
+    - Refactoring Submodule to allow easy loading of similar subdevices as
+      plugins using a common prefix in MOP [Shantanu Bhadoria]
+    - minor changes [Shantanu Bhadoria]
+    - minor changes [Shantanu Bhadoria] [Shantanu]
  - Removed Math::Trig usage. manually computing trig functions [Shantanu]
  - Resolved xt test failures [Shantanu]
  - Refactoring Submodule to allow easy loading of similar subdevices as
