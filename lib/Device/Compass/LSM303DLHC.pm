@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 package Device::Compass::LSM303DLHC;
 
 # PODNAME: Device::Compass::LSM303DLHC
@@ -14,7 +16,7 @@ extends 'Device::SMBus';
 
 =attr I2CDeviceAddress
 
-Containd the I2CDevice Address for the bus on which your Compass is connected. It would look like 0x6b. Default is 0x1e.
+Contains the I2CDevice Address for the bus on which your Compass is connected. It would look like 0x6b. Default is 0x1e.
 
 =cut
 
@@ -23,10 +25,28 @@ has '+I2CDeviceAddress' => (
     default => 0x1e,
 );
 
+=register MR_REG_M
+
+=cut
+
 # Registers for the Magnetometer
 use constant {
     MR_REG_M    => 0x02,
 };
+
+=register OUT_X_H_M
+
+=register OUT_X_L_M
+
+=register OUT_Y_H_M
+
+=register OUT_Y_L_M
+
+=register OUT_Z_H_M
+
+=register OUT_Z_L_M
+
+=cut
 
 # X, Y and Z Axis magnetic Field Data value in 2's complement
 use constant {

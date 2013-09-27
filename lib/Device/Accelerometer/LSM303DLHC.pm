@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 package Device::Accelerometer::LSM303DLHC;
 
 # PODNAME: Device::Accelerometer::LSM303DLHC
@@ -36,9 +38,9 @@ has 'gCorrectionFactor' => (
     default => 256
 );
 
-=attr gravitationAcceleration
+=attr gravitationalAcceleration
 
-This is the acceleration due to gravity in meters per second square usally represented as g. default on earth is around 9.8 although it differs from 9.832 near the poles to 9.780 at equator. This might also be different if you are on a different planet or in space.
+This is the acceleration due to gravity in meters per second square usually represented as g. default on earth is around 9.8 although it differs from 9.832 near the poles to 9.780 at equator. This might also be different if you are on a different planet or in space.
 
 =cut
 
@@ -63,15 +65,39 @@ sub _build_mssCorrectionFactor {
     $self->gCorrectionFactor/$self->gravitationalAcceleration;
 }
 
+=constant PI
+
+=cut
+
 use constant {
     PI => 3.14159265359,
 };
+
+=register CTRL_REG1_A
+
+=register CTRL_REG4_A
+
+=cut
 
 # Registers for the Accelerometer 
 use constant {
     CTRL_REG1_A => 0x20,
     CTRL_REG4_A => 0x23,
 };
+
+=register OUT_X_H_A
+
+=register OUT_X_L_A
+
+=register OUT_Y_H_A
+
+=register OUT_Y_L_A
+
+=register OUT_Z_H_A
+
+=register OUT_Z_L_A
+
+=cut
 
 # X, Y and Z Axis magnetic Field Data value in 2's complement
 use constant {
@@ -159,9 +185,9 @@ sub getAccelerationVectorInMSS {
     };
 }
 
-=method getAccelerationVectorInclination
+=method getAccelerationVectorAngles
 
-returns  coorinate angles between the acceleration vector(R) and the cartesian Coordinates(x,y,z). 
+returns  coordinate angles between the acceleration vector(R) and the cartesian Coordinates(x,y,z). 
 
 =cut
 
@@ -180,7 +206,7 @@ sub getAccelerationVectorAngles {
 
 =method getRollYawPitch
 
-returns  Roll, Yaw and Pitch from the accelerometer. This is a bare reading from accelerometer and it assumes gravity is the only force on the accelerometer, which means it will be quiet inacccurate for a moving accelerometer.
+returns  Roll, Yaw and Pitch from the accelerometer. This is a bare reading from accelerometer and it assumes gravity is the only force on the accelerometer, which means it will be quiet inaccurate for a moving accelerometer.
 
 =cut
 
@@ -201,6 +227,12 @@ sub _acos {
 sub _typecast_int_to_int16 {
     return  unpack 's' => pack 'S' => $_[1];
 }
+
+=method calibrate
+
+placeholder for calibration function
+
+=cut
 
 sub calibrate {
     my ($self) =@_;

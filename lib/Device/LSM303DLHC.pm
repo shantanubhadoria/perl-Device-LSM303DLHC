@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 package Device::LSM303DLHC;
 
 # PODNAME: Device::LSM303DLHC 
