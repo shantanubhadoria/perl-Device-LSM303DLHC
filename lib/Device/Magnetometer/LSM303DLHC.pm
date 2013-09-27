@@ -1,9 +1,9 @@
 use strict;
 use warnings;
-package Device::Compass::LSM303DLHC;
+package Device::Magnetometer::LSM303DLHC;
 
-# PODNAME: Device::Compass::LSM303DLHC
-# ABSTRACT: I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
+# PODNAME: Device::Magnetometer::LSM303DLHC
+# ABSTRACT: I2C interface to Magnetometer on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
 # COPYRIGHT
 # VERSION
 
@@ -16,7 +16,7 @@ extends 'Device::SMBus';
 
 =attr I2CDeviceAddress
 
-Contains the I2CDevice Address for the bus on which your Compass is connected. It would look like 0x6b. Default is 0x1e.
+Contains the I2CDevice Address for the bus on which your Magnetometer is connected. It would look like 0x6b. Default is 0x1e.
 
 =cut
 

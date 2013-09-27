@@ -12,7 +12,7 @@ use 5.010;
 use Moose;
 use POSIX;
 
-use Device::Compass::LSM303DLHC;
+use Device::Magnetometer::LSM303DLHC;
 use Device::Accelerometer::LSM303DLHC;
 
 =attr I2CBusDevicePath
@@ -27,24 +27,24 @@ has 'I2CBusDevicePath' => (
     required => 1,
 );
 
-=attr Compass
+=attr Magnetometer
 
-    $self->Compass->enable();
-    $self->Compass->getReading();
+    $self->Magnetometer->enable();
+    $self->Magnetometer->getReading();
 
-This is a object of L<Device::Compass::LSM303DLHC>
+This is a object of L<Device::Magnetometer::LSM303DLHC>
 
 =cut
 
-has Compass => (
+has Magnetometer => (
     is => 'ro',
-    isa => 'Device::Compass::LSM303DLHC',
+    isa => 'Device::Magnetometer::LSM303DLHC',
     lazy_build => 1,
 );
 
-sub _build_Compass {
+sub _build_Magnetometer {
     my ($self) = @_;
-    my $obj = Device::Compass::LSM303DLHC->new(
+    my $obj = Device::Magnetometer::LSM303DLHC->new(
         I2CBusDevicePath => $self->I2CBusDevicePath
     );
     return $obj;
