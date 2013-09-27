@@ -12,8 +12,6 @@ use 5.010;
 use Moose;
 use POSIX;
 
-use Math::Trig;
-
 extends 'Device::SMBus';
 
 =attr I2CDeviceAddress
