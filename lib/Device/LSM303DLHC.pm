@@ -10,8 +10,8 @@ use 5.010;
 use Moose;
 use POSIX;
 
-use Device::LSM303DLHC::Compass;
-use Device::LSM303DLHC::Accelerometer;
+use Device::Compass::LSM303DLHC;
+use Device::Accelerometer::LSM303DLHC;
 
 =attr I2CBusDevicePath
 
@@ -30,19 +30,19 @@ has 'I2CBusDevicePath' => (
     $self->Compass->enable();
     $self->Compass->getReading();
 
-This is a object of L<Device::LSM303DLHC::Compass>
+This is a object of L<Device::Compass::LSM303DLHC>
 
 =cut
 
 has Compass => (
     is => 'ro',
-    isa => 'Device::LSM303DLHC::Compass',
+    isa => 'Device::Compass::LSM303DLHC',
     lazy_build => 1,
 );
 
 sub _build_Compass {
     my ($self) = @_;
-    my $obj = Device::LSM303DLHC::Compass->new(
+    my $obj = Device::Compass::LSM303DLHC->new(
         I2CBusDevicePath => $self->I2CBusDevicePath
     );
     return $obj;
@@ -53,19 +53,19 @@ sub _build_Compass {
     $self->Accelerometer->enable();
     $self->Accelerometer->getReading();
 
-This is a object of L<Device::LSM303DLHC::Accelerometer>
+This is a object of L<Device::Accelerometer::LSM303DLHC>
 
 =cut
 
 has Accelerometer => (
     is => 'ro',
-    isa => 'Device::LSM303DLHC::Accelerometer',
+    isa => 'Device::Accelerometer::LSM303DLHC',
     lazy_build => 1,
 );
 
 sub _build_Accelerometer {
     my ($self) = @_;
-    my $obj = Device::LSM303DLHC::Accelerometer->new(
+    my $obj = Device::Accelerometer::LSM303DLHC->new(
         I2CBusDevicePath => $self->I2CBusDevicePath
     );
     return $obj;

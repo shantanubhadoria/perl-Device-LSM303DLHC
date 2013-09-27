@@ -4,8 +4,8 @@ use FindBin qw($Bin);
 use lib "$Bin/../lib";
 
 use Device::LSM303DLHC;
-#use Device::LSM303DLHC::Compass;
-#use Device::LSM303DLHC::Accelerometer;
+#use Device::Compass::LSM303DLHC;
+#use Device::Accelerometer::LSM303DLHC;
 
 my $dev = Device::LSM303DLHC->new(I2CBusDevicePath => '/dev/i2c-1');
 $dev->Compass->enable();
@@ -22,7 +22,7 @@ while(){
 
 
     #print "COMPASS: $compass->{x}\t$compass->{y}\t$compass->{z}\t\n";
-    print "\tACCELEROMETER: $accelerometer->{x}\t$accelerometer->{y}\t$accelerometer->{z}\t\n" ;
+    print "\tACCELEROMETER: $accelerometer->{x}\t$accelerometer->{y}\t$accelerometer->{z}\t\tCOMPASS: $compass->{x}\t$compass->{y}\t$compass->{z}\t\n" ;
 
 =head2 
 
@@ -50,7 +50,7 @@ while(){
 =cut
 
     
-    print 'COMPASS: ' . Dumper {$dev->Compass->getRawReading()};
-    print 'ACCELEROMETER: ' . Dumper {$dev->Accelerometer->getRawReading()};
+    #print 'COMPASS: ' . Dumper {$dev->Compass->getRawReading()};
+    #print 'ACCELEROMETER: ' . Dumper {$dev->Accelerometer->getRawReading()};
 }
 

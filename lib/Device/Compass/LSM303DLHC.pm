@@ -1,6 +1,6 @@
-package Device::LSM303DLHC::Compass;
+package Device::Compass::LSM303DLHC;
 
-# PODNAME: Device::LSM303DLHC::Compass
+# PODNAME: Device::Compass::LSM303DLHC
 # ABSTRACT: I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
 # COPYRIGHT
 # VERSION
