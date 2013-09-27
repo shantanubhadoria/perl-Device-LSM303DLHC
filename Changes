@@ -1,6 +1,17 @@
 Changelog for Device-LSM303DLHC
 
-0.005 2013-09-12T09:23:37
+0.006 2013-09-27T10:49:13
+ - Removed Math::Trig usage. manually computing trig functions [Shantanu]
+ - Resolved xt test failures [Shantanu]
+ - Refactoring Submodule to allow easy loading of similar subdevices as
+   plugins using a common prefix in MOP [Shantanu Bhadoria]
+ - minor changes [Shantanu Bhadoria]
+ - minor changes [Shantanu Bhadoria]
+
+0.005 2013-09-12T09:23:58
+ - v0.005
+   
+    - Added README.pod and Changes [Shantanu] [Shantanu]
  - Added README.pod and Changes [Shantanu]
 
 0.004 2013-09-12T06:47:10

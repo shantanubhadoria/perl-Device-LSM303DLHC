@@ -6,7 +6,7 @@ Device::LSM303DLHC - I2C interface to LSM303DLHC 3 axis magnetometer(compass) an
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 ATTRIBUTES
 
@@ -20,14 +20,14 @@ This must be provided during object creation.
     $self->Compass->enable();
     $self->Compass->getReading();
 
-This is a object of L<Device::LSM303DLHC::Compass>
+This is a object of L<Device::Compass::LSM303DLHC>
 
 =head2 Accelerometer 
 
     $self->Accelerometer->enable();
     $self->Accelerometer->getReading();
 
-This is a object of L<Device::LSM303DLHC::Accelerometer>
+This is a object of L<Device::Accelerometer::LSM303DLHC>
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
