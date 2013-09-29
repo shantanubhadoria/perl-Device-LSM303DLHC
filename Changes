@@ -1,6 +1,14 @@
 Changelog for Device-LSM303DLHC
 
-0.007 2013-09-27T11:40:14
+0.008 2013-09-29T02:47:50
+ - POD spelling fixes [Shantanu]
+
+0.007 2013-09-27T11:41:12
+ - v0.007
+   
+    - Renamed Compass to Magnetometer to use the more scientific term since
+      the term compass is usually used for 2D magnetometers not 3D
+      Magnetometers. [Shantanu] [Shantanu]
  - Renamed Compass to Magnetometer to use the more scientific term since
    the term compass is usually used for 2D magnetometers not 3D
    Magnetometers. [Shantanu]
