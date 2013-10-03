@@ -1,6 +1,12 @@
 Changelog for Device-LSM303DLHC
 
-0.008 2013-09-29T02:47:50
+0.009 2013-10-03T15:21:35
+ - Non Raw reading scaled between -0.5 and 0.5 [Shantanu]
+
+0.008 2013-09-29T02:48:36
+ - v0.008
+   
+    - POD spelling fixes [Shantanu] [Shantanu]
  - POD spelling fixes [Shantanu]
 
 0.007 2013-09-27T11:41:12
