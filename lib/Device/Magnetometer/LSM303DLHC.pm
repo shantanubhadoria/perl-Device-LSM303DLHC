@@ -113,16 +113,28 @@ sub getRawReading {
     };
 }
 
-=method getReading
+=method getMagnetometerScale1
 
-    $self->getReading()
+    $self->getMagnetometerScale1()
 
-Return proper calculated readings from the magnetometer
+Return proper calculated readings from the magnetometer scaled between +0.5 and
+-0.5
 
 =cut
 
-sub getReading {
+sub getMagnetometerScale1 {
     my ($self) = @_;
+    my $rawReading            = $self->getRawReading;
+    my $magnetometerMaxVector = $self->magnetometerMaxVector;
+    my $magnetometerMinVector = $self->magnetometerMinVector;
+    return {
+        x => ($rawReading->{x} - $magnetometerMinVector->{x})
+            / ($magnetometerMaxVector->{x} - $magnetometerMinVector->{x}),
+        y => ($rawReading->{y} - $magnetometerMinVector->{y})
+            / ($magnetometerMaxVector->{y} - $magnetometerMinVector->{y}),
+        z => ($rawReading->{z} - $magnetometerMinVector->{z})
+            / ($magnetometerMaxVector->{z} - $magnetometerMinVector->{z}),
+    };
 }
 
 sub _typecast_int_to_int16 {
