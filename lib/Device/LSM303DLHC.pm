@@ -12,6 +12,7 @@ use 5.010;
 use Moose;
 use POSIX;
 
+use Device::SMBus;
 use Device::Magnetometer::LSM303DLHC;
 use Device::Accelerometer::LSM303DLHC;
 
