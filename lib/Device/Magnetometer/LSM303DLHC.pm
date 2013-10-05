@@ -63,20 +63,22 @@ use constant {
 has magnetometerMaxVector => (
     is      => 'rw',
     default => sub {
-        return (
-            x => 0,
-            y => 0,
-            z => 0,);
+        return {
+            x => 424,
+            y => 295,
+            z => 472,
+        };
     },
 );
 
 has magnetometerMinVector => (
     is      => 'rw',
     default => sub {
-        return (
-            x => 0,
-            y => 0,
-            z => 0,);
+        return {
+            x => -421,
+            y => -639,
+            z => -238,
+        };
     },
 );
 
