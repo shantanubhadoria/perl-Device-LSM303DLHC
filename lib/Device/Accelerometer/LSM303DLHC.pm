@@ -202,20 +202,20 @@ sub getAccelerationVectorAngles {
     };
 }
 
-=method getRollYawPitch
+=method getRollPitch
 
-returns  Roll, Yaw and Pitch from the accelerometer. This is a bare reading from accelerometer and it assumes gravity is the only force on the accelerometer, which means it will be quiet inaccurate for a moving accelerometer.
+returns  Roll and Pitch from the accelerometer. This is a bare reading from accelerometer and it assumes gravity is the only force on the accelerometer, which means it will be quiet inaccurate for a accelerating accelerometer.
 
 =cut
 
-sub getRollYawPitch {
+sub getRollPitch {
     my ($self) = @_;
     
     my $raw = $self->getRawReading;
 
     return {
-        Pitch => atan2($raw->{y},$raw->{z})+PI,
         Roll  => atan2($raw->{x},$raw->{z})+PI,
+        Pitch => atan2($raw->{y},$raw->{z})+PI,
     };
 }
 
