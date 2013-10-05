@@ -1,6 +1,18 @@
 Changelog for Device-LSM303DLHC
 
-0.010 2013-10-03T15:23:08
+0.011 2013-10-05T01:06:01
+ - Merge branch 'master' of github.com:shantanubhadoria/Device-LSM303DLHC
+   [Shantanu]
+ - small changes [Shantanu Bhadoria]
+ - small changes [Shantanu Bhadoria]
+
+0.010 2013-10-03T15:24:10
+ - v0.010
+   
+    - Merge branch 'master' of
+   github.com:shantanubhadoria/Device-LSM303DLHC
+      [Shantanu]
+    - Non Raw reading scaled between -0.5 and 0.5 [Shantanu] [Shantanu]
  - Merge branch 'master' of github.com:shantanubhadoria/Device-LSM303DLHC
    [Shantanu]
  - Non Raw reading scaled between -0.5 and 0.5 [Shantanu]
