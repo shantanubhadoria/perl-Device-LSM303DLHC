@@ -9,9 +9,9 @@ package Device::Magnetometer::LSM303DLHC;
 
 # Dependencies
 use 5.010;
-use Moose;
 use POSIX;
 
+use Moose;
 extends 'Device::SMBus';
 
 =attr I2CDeviceAddress
@@ -81,7 +81,6 @@ has magnetometerMinVector => (
         };
     },
 );
-
 
 =method enable 
 
