@@ -1,6 +1,10 @@
 Changelog for Device-LSM303DLHC
 
-0.012 2015-03-25T07:18:02
+0.013 2015-03-25T07:19:33
+ - Reorganising, extending instead of using (Shantanu Bhadoria)
+
+0.012 2015-03-25T07:18:39
+ - v0.012 (Shantanu Bhadoria)
  - Reorganising, extending instead of using (Shantanu Bhadoria)
  - Fixed Raw reading on scale 1 (Shantanu Bhadoria)
 
