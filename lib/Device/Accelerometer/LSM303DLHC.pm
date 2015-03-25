@@ -9,9 +9,9 @@ package Device::Accelerometer::LSM303DLHC;
 
 # Dependencies
 use 5.010;
-use Moose;
 use POSIX;
 
+use Moose;
 extends 'Device::SMBus';
 
 =attr I2CDeviceAddress
@@ -24,44 +24,6 @@ has '+I2CDeviceAddress' => (
     is      => 'ro',
     default => 0x19,
 );
-
-=attr gCorrectionFactor
-
-This is a correction factor for converting raw values of acceleration in units of g or gravitational acceleration. It depends on the sensitivity set in the registers.
-
-=cut
-
-has 'gCorrectionFactor' => (
-    is      => 'ro',
-    default => 256
-);
-
-=attr gravitationalAcceleration
-
-This is the acceleration due to gravity in meters per second square usually represented as g. default on earth is around 9.8 although it differs from 9.832 near the poles to 9.780 at equator. This might also be different if you are on a different planet or in space.
-
-=cut
-
-has 'gravitationalAcceleration' => (
-    is      => 'ro',
-    default => 9.8
-);
-
-=attr mssCorrectionFactor
-
-This attribute is built from the above two attributes automatically. This is usually gCorrectionFactor divided by gravitationalAcceleration. This is the inverse of relation between raw accelerometer values and its value in meters per seconds.
-
-=cut
-
-has 'mssCorrectionFactor' => (
-    is         => 'ro',
-    lazy_build => 1,
-);
-
-sub _build_mssCorrectionFactor {
-    my ($self) = @_;
-    $self->gCorrectionFactor/$self->gravitationalAcceleration;
-}
 
 =constant PI
 
@@ -109,6 +71,43 @@ use constant {
     OUT_Z_L_A => 0x2c,
 };
 
+=attr gCorrectionFactor
+
+This is a correction factor for converting raw values of acceleration in units of g or gravitational acceleration. It depends on the sensitivity set in the registers.
+
+=cut
+
+has 'gCorrectionFactor' => (
+    is      => 'ro',
+    default => 256
+);
+
+=attr gravitationalAcceleration
+
+This is the acceleration due to gravity in meters per second square usually represented as g. default on earth is around 9.8 although it differs from 9.832 near the poles to 9.780 at equator. This might also be different if you are on a different planet or in space.
+
+=cut
+
+has 'gravitationalAcceleration' => (
+    is      => 'ro',
+    default => 9.8
+);
+
+=attr mssCorrectionFactor
+
+This attribute is built from the above two attributes automatically. This is usually gCorrectionFactor divided by gravitationalAcceleration. This is the inverse of relation between raw accelerometer values and its value in meters per seconds.
+
+=cut
+
+has 'mssCorrectionFactor' => (
+    is         => 'ro',
+    lazy_build => 1,
+);
+
+sub _build_mssCorrectionFactor {
+    my ($self) = @_;
+    $self->gCorrectionFactor/$self->gravitationalAcceleration;
+}
 
 =method enable 
 
