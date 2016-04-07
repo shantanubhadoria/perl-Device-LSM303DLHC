@@ -1,7 +1,7 @@
 Changelog for Device-LSM303DLHC
 
-0.014 2016-04-07T06:45:58
- - No changes found
+0.014 2016-04-07T06:46:22
+ - Added travis and badges (Shantanu Bhadoria)
 
 0.013 2015-03-25T07:20:05
  - v0.013 (Shantanu Bhadoria)
