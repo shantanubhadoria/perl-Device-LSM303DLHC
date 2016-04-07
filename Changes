@@ -1,6 +1,10 @@
 Changelog for Device-LSM303DLHC
 
-0.013 2015-03-25T07:19:33
+0.014 2016-04-07T06:45:58
+ - No changes found
+
+0.013 2015-03-25T07:20:05
+ - v0.013 (Shantanu Bhadoria)
  - Reorganising, extending instead of using (Shantanu Bhadoria)
 
 0.012 2015-03-25T07:18:39
@@ -59,4 +63,3 @@ Changelog for Device-LSM303DLHC
  - First Commit (Shantanu Bhadoria)
  - First Push with basic Raw Readings from LSM303DLHC Compass and
    Accelerometer (Shantanu Bhadoria)
-
